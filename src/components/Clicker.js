@@ -1,11 +1,19 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+
 import './style/Clicker.css'
+
+import { Button } from 'react-bootstrap';
 
 class ClickerButton extends Component {
     render() {
         return (
-            <input onClick={this.props.onClick} type="button" class="btn btn-clear btn-primary" id="clicker" value="Add Point" />
+            <Button
+                bsStyle="primary"
+                onClick={this.props.onClick}
+            >
+                Add Point
+            </Button>
         );
     }
 }
