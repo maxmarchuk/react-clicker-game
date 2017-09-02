@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import './styles/Clicker.css'
+import './style/Clicker.css'
 
 class ClickerButton extends Component {
     render() {
