@@ -7,7 +7,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-          <GameContainer/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css"/>
+        <GameContainer/>
       </div>
     );
   }
