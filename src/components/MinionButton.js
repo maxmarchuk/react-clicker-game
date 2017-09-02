@@ -7,19 +7,25 @@ import {Button} from 'react-bootstrap';
 
 class MinionButton extends Component {
     render() {
-        const {price, disabled} = this.props;
+        const {amount, price, disabled} = this.props;
         return (
-            <Button disabled={disabled}>Buy Minion ({price})</Button>
+            <Button disabled={disabled} onClick={() => this.props.onClick(amount, price)}>
+                Buy Minion ({price})
+            </Button>
         );
     }
 }
 
 MinionButton.propTypes = {
-    price: PropTypes.number
+    amount: PropTypes.number,
+    price: PropTypes.number,
+    disabled: PropTypes.bool
 };
 
 MinionButton.defaultProps = {
-    price: 0
+    amount: 0,
+    price: 0,
+    disabled: true
 };
 
 export default MinionButton;

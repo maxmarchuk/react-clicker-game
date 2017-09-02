@@ -7,21 +7,25 @@ import {Button} from 'react-bootstrap';
 
 class PowerButton extends Component {
     render() {
-        const {price, disabled} = this.props;
+        const {amount, price, disabled} = this.props;
         return (
-            <Button disabled={disabled}>
-                Power Boost ({price})
+            <Button disabled={disabled} onClick={() => this.props.onClick(amount, price) }>
+                Power + {amount} ({price})
             </Button>
         );
     }
 }
 
 PowerButton.propTypes = {
-    price: PropTypes.number
+    amount: 0,
+    price: PropTypes.number,
+    disabled: PropTypes.bool
 };
 
 PowerButton.defaultProps = {
-    price: 0
+    amount: 0,
+    price: 0,
+    disabled: true
 };
 
 export default PowerButton;
