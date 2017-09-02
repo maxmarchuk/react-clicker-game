@@ -4,6 +4,7 @@ import Scoreboard from "./Scoreboard";
 import Clicker from "./Clicker";
 import ButtonSection from "./ButtonSection";
 import PowerButton from "./PowerButton";
+import MinionButton from "./MinionButton";
 
 
 class GameContainer extends Component {
@@ -34,8 +35,8 @@ class GameContainer extends Component {
                 <Clicker onClick={this.onClickerClick.bind(this)}/>
 
                 <ButtonSection title='Store'>
-                    <PowerButton power={3} price={5}/>
-                    <PowerButton power={3} price={5}/>
+                    <PowerButton price={5} disabled={points < 5}/>
+                    <MinionButton price={15} disabled={points < 15}/>
                 </ButtonSection>
             </div>
         );

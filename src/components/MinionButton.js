@@ -5,23 +5,21 @@ import React, {
 
 import {Button} from 'react-bootstrap';
 
-class PowerButton extends Component {
+class MinionButton extends Component {
     render() {
         const {price, disabled} = this.props;
         return (
-            <Button disabled={disabled}>
-                Power Boost ({price})
-            </Button>
+            <Button disabled={disabled}>Buy Minion ({price})</Button>
         );
     }
 }
 
-PowerButton.propTypes = {
+MinionButton.propTypes = {
     price: PropTypes.number
 };
 
-PowerButton.defaultProps = {
+MinionButton.defaultProps = {
     price: 0
 };
 
-export default PowerButton;
+export default MinionButton;
