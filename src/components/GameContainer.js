@@ -8,15 +8,29 @@ import MinionButton from "./MinionButton";
 import ResetButton from "./ResetButton";
 
 
+const DEFAULT_STATE = {
+    points: 0,
+    power: 1,
+    minions: 0
+};
+
 class GameContainer extends Component {
     constructor(props) {
         super(props);
 
-        this.state = {
-            points: 0,
-            power: 1,
-            minions: 0
-        };
+        this.state = DEFAULT_STATE;
+
+        setInterval(() => this.onTick(), 1000);
+    }
+
+    onTick() {
+        const { points, minions } = this.state;
+        if(minions > 0) {
+            this.setState({
+                points: points + minions
+            });
+        }
+
     }
 
     onClickerClick() {
@@ -41,6 +55,10 @@ class GameContainer extends Component {
             minions: minions + minionsToAdd,
             points: points - cost
         });
+    }
+
+    resetGame() {
+        this.setState(DEFAULT_STATE);
     }
 
     render() {
@@ -68,7 +86,7 @@ class GameContainer extends Component {
                     />
                 </ButtonSection>
                 <ButtonSection title='Other'>
-                    <ResetButton/>
+                    <ResetButton onResetClick={this.resetGame.bind(this)}/>
                 </ButtonSection>
             </div>
         );
