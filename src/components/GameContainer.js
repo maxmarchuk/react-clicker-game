@@ -35,6 +35,7 @@ class GameContainer extends Component {
 
                 <ButtonSection title='Store'>
                     <PowerButton power={3} price={5}/>
+                    <PowerButton power={3} price={5}/>
                 </ButtonSection>
             </div>
         );
