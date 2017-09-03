@@ -6,7 +6,7 @@ class GameHeader extends Component {
         const { points, power, minions } = this.props;
         return (
             <div>
-                <h1 class="text-primary">{points}</h1>
+                <h1>{points}</h1>
                 <p>Power: <span>{power}</span> | Auto: <span>{minions}</span></p>
             </div>
         );
